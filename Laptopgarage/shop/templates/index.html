@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav">
+            <a href="{% url 'shop:index' %}"><img src="{% static 'images/logo.png' %}" class="brand-logo" alt=""></a>
+            <div class="nav-items">
+                <div class="search">
+                    <input type="text" class="search-box" placeholder="search brand, product">
+                    <button class="search-btn">search</button>
+                </div>
+                <a href="#"><img src="{% static 'images/menu.png' %}" alt=""></a>
+                <a href="#"><img src="{% static 'images/close.png' %}" alt=""></a>
+            </div>
+        </div>     
+    </nav>
+    <ul class="links-container">
+        <li class="link-item"><a href="{% url 'shop:product' %}" class="link">Product</a></li>
+        <li class="link-item"><a href="{% url 'shop:service' %}" class="link">Services</a></li>
+        <li class="link-item"><a href="#" class="link">men</a></li>
+        <li class="link-item"><a href="#" class="link">kids</a></li>
+        <li class="link-item"><a href="#" class="link">acees</a></li>
+    </ul>
+    <header class="hero-section">
+        <div class="content">
+            <img src="{% static 'images/logo.png' %}" class="logo" alt="log">
+            <p class="sub-heading">Welcome to Laptop giga garage</p>
+        </div>
+    </header>
+    <section class="product">
+        <h2 class="product-category">New Products</h2>
+    </section>
+    <div class="row">
+        {% for product in products %}
+        <div class="column">
+            <div class="product-container">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="{{ product.image.url }}" class="product-thumb" alt="">
+                        <button class="card-btn">add to cart</button>
+                        <button class="card-btn">add to whislist</button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">{{product.title}}</h2>
+                        <p class="product-short-des">{{product.description | truncatechars:200}}</p>
+                        <span class="price">{{product.price}} SH</span><span class="actual-price">$40</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+    <br>
+    <hr>
+    <section class="product">
+        <h2 class="product-category">Our Services</h2>
+    </section>
+    <div class="row">
+        {% for service in services %}
+        <div class="column">
+            <div class="product-container">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ service.image.url }}" class="product-thumb" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">{{service.title}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+    <!--Service section-->
+    <secton id="service">
+        <div class="title-text">
+            <p>SERVICES</p>
+            <h1>What Client Says</h1>
+        </div>
+        <div class="service-box">
+            <div class="single-service">
+                <img src="{% static 'images/pic-1.jpg' %}">
+                <div class="overlay"></div>
+                <!-- <div class="service-desc">
+                    <h3>Screen repair</h3>
+                    <hr>
+                    <p>
+                        Each chapter also contains a summary, homework problems, and a bibliography.  
+                    </p>
+                </div> -->
+            </div>
+            <div class="single-service">
+                <img src="{% static 'images/pic-2.jpg' %}">
+                <div class="overlay"></div>
+                <!-- <div class="service-desc">
+                    <h3>Screen repair</h3>
+                    <hr>
+                    <p>
+                        Each chapter also contains a summary, homework problems, and a bibliography.  
+                    </p>
+                </div> -->
+            </div>
+            <div class="single-service">
+                <img src="{% static 'images/pic-3.jpg' %}">
+                <div class="overlay"></div>
+                <!-- <div class="service-desc">
+                    <h3>Screen repair</h3>
+                    <hr>
+                    <p>
+                        Each chapter also contains a summary, homework problems, and a bibliography.  
+                    </p>
+                </div> -->
+            </div>
+            <div class="single-service">
+                <img src="{% static 'images/pic-4.jpg' %}">
+                <div class="overlay"></div>
+                <!-- <div class="service-desc">
+                    <h3>Screen repair</h3>
+                    <hr>
+                    <p>
+                        Each chapter also contains a summary, homework problems, and a bibliography.  
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </secton>
+
+    <!--Testimonial section-->
+    <section id="testimonials">
+        <div class="title-text">
+            <p>TESTIMONIALS</p>
+            <h1>What Client Says</h1>
+        </div>
+        <div class="testimonial-row">
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="{% static 'images/img-1.jpg' %}">
+                    <div class="user-info">
+                        <h4>LEVIS ODHIAMBO</h4>
+                        <small>@odhisodhis</small>
+                    </div>
+                </div>
+                <p>Each chapter also contains a summary, homework problems, and a bibliography. 
+                    A glossary of important terms is also included. The chapter summaries are formatted 
+                    to facilitate their use in lecture viewgraphs. </p>
+            </div>
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="{% static 'images/img-2.jpg' %}">
+                    <div class="user-info">
+                        <h4>LEVIS ODHIAMBO</h4>
+                        <small>@odhisodhis</small>
+                    </div>
+                </div>
+                <p>Each chapter also contains a summary, homework problems, and a bibliography. 
+                    A glossary of important terms is also included. The chapter summaries are formatted 
+                    to facilitate their use in lecture viewgraphs. </p>
+            </div>
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="{% static 'images/img-3.jpg' %}">
+                    <div class="user-info">
+                        <h4>LEVIS ODHIAMBO</h4>
+                        <small>@odhisodhis</small>
+                    </div>
+                </div>
+                <p>Each chapter also contains a summary, homework problems, and a bibliography. 
+                    A glossary of important terms is also included. The chapter summaries are formatted 
+                    to facilitate their use in lecture viewgraphs. </p>
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+        <div class="title-text">
+            <p>CONTACT</p>
+            <h1>Visit Shop Today</h1>
+        </div>
+        <div class="footer-row">
+            <div class="footer-left">
+                <h1>Opening Hours</h1>
+                <p>Monday to Friday - 8am to 7pm</p>
+                <p>Saturday to Sunday - 9am to 7pm</p>
+            </div>
+            <div class="footer-right">
+                <h1>Get In Touch</h1>
+                <p>Opposite ACK church, Maseno University</p>
+                <p>laptopgarage@website.com</p>
+                <p>0700000000</p>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

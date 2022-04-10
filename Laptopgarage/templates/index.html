@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav">
+            <img src="img/dark-logo.png" class="brand-logo" alt="">
+            <div class="nav-items">
+                <div class="search">
+                    <input type="text" class="search-box" placeholder="search brand, product">
+                    <button class="search-btn">search</button>
+                </div>
+                <a href="#"><img src="img/user.png" alt=""></a>
+                <a href="#"><img src="img/cart.png" alt=""></a>
+            </div>
+        </div>     
+    </nav>
+    <ul class="links-container">
+        <li class="link-item"><a href="#" class="link">home</a></li>
+        <li class="link-item"><a href="#" class="link">women</a></li>
+        <li class="link-item"><a href="#" class="link">men</a></li>
+        <li class="link-item"><a href="#" class="link">kids</a></li>
+        <li class="link-item"><a href="#" class="link">acees</a></li>
+    </ul>
+    <header class="hero-section">
+        <div class="content">
+            <img src="img/hero.png" class="logo" alt="log">
+            <p class="sub-heading">Welcome to Laptop giga garage</p>
+        </div>
+    </header>
+    <section class="product">
+        <h2 class="product-category">New Products</h2>
+    </section>
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/card1.png" class="product-thumb" alt="">
+                <button class="card-btn">add to whislist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-brand">brand</h2>
+                <p class="product-short-des">a short line about the cloth..</p>
+                <span class="price">$20</span><span class="actual-price">$40</span>
+            </div>
+        </div>
+        +7 more cards
+    </div>
+    <section class="product">
+        <h2 class="product-category">New Products</h2>
+    </section>
+    <section class="collection-container">
+        <a href="#" class="collection">
+            <img src="img/women-collection.png" alt="">
+            <p class="collection-title">women <br> apparels</p>
+        </a>
+        <a href="#" class="collection">
+            <img src="img/men-collection.png" alt="">
+            <p class="collection-title">men <br> apparels</p>
+        </a>
+        <a href="#" class="collection">
+            <img src="img/accessories-collection.png" alt="">
+            <p class="collection-title">accessories</p>
+        </a>
+    </section>
+    
+    
+    <!-- <h1>LAPTOP GIGA GARAGE</h1>
+    <p>Welcome to our shop</p>
+    <br>
+    <div>
+        <h3>Products</h3>
+        {% for product in products %}
+        <div class="card">
+            <img src="" alt="avatar" style="width: 100%;">
+            <div class="container">
+                <h4><b>{{ product.title }}</b></h4>
+                <p>LAPTOP GIGA GARAGE</p>
+            </div>
+        </div>
+        <!-- <p>{{ product.title }}</p> -->
+        <!-- {% endfor %}
+    </div>
+    <br>
+    <div>
+        <h3>Services</h3>
+        {% for service in services %}
+        <p>{{ service.title }}</p>
+        {% endfor %}
+    </div> -->
+    
+</body>
+</html>

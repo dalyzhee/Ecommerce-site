@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <title>Service Page</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
 </head>
@@ -23,33 +23,32 @@
             </div>
         </div>     
     </nav>
-    <ul class="links-container">
-        {% for category in categorys %}
-        <li class="link-item"><a href="{% url 'shop:category' category.name %}" class="link">{{category.name}}</a></li>
-        {% endfor %}
-    </ul>
-    <div class="row">
-        {% for product in products %}
-        <div class="column">
-            <div class="product-container">
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ product.image.url }}" class="product-thumb" alt="">
-                        <button class="card-btn">add to cart</button>
-                        <button class="card-btn"><a href="{% url 'shop:product_detail' product.pk %}">add to whislist</a></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">{{product.title}}</h2>
-                        <p class="product-short-des">{{product.description | truncatechars:200}}</p>
-                        <span class="price">{{product.price}} SH</span><span class="actual-price">$40</span>
+    <br>
+    <div class="col-md-8 offset-md-2">
+        <h1>{{ category | title }}</h1>
+        <br>
+        <div class="row">
+            {% for product in products %}
+            <div class="column">
+                <div class="product-container">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-tag">50% off</span>
+                            <img src="{{ product.image.url }}" class="product-thumb" alt="">
+                            <button class="card-btn">add to whislist</button>
+                        </div>
+                        <div class="product-info">
+                            <h2 class="product-brand">{{product.title}}</h2>
+                            <p class="product-short-des">{{product.description | truncatechars:200}}</p>
+                            <span class="price">{{product.price}} SH</span><span class="actual-price">$40</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {% endfor %}
-        
-    </div>  
+            {% endfor %}
+            
+        </div>  
+    </div>
     <section id="footer">
         <div class="title-text">
             <p>CONTACT</p>
@@ -68,6 +67,6 @@
                 <p>0700000000</p>
             </div>
         </div>
-    </section>  
+    </section>   
 </body>
 </html>

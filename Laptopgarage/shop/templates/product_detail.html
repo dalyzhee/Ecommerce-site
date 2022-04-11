@@ -28,26 +28,8 @@
         <li class="link-item"><a href="{% url 'shop:category' category.name %}" class="link">{{category.name}}</a></li>
         {% endfor %}
     </ul>
-    <div class="row">
-        {% for product in products %}
-        <div class="column">
-            <div class="product-container">
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="{{ product.image.url }}" class="product-thumb" alt="">
-                        <button class="card-btn">add to cart</button>
-                        <button class="card-btn"><a href="{% url 'shop:product_detail' product.pk %}">add to whislist</a></button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-brand">{{product.title}}</h2>
-                        <p class="product-short-des">{{product.description | truncatechars:200}}</p>
-                        <span class="price">{{product.price}} SH</span><span class="actual-price">$40</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+    <h4>{{ product.title }}</h4>
+    <p>{{ product.description }}</p>
         
     </div>  
     <section id="footer">
